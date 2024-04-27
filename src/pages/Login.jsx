@@ -2,9 +2,12 @@ import { useContext } from "react";
 import { Link } from "react-router-dom"
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from 'react-toastify';
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, loginByGoogle } = useContext(AuthContext);
+
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -16,10 +19,14 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             console.log(result.user);
+            
             const user = {
                 email,
                 lastLoggedAt: result.user?.metadata?.lastSignInTime
+                
             }
+            
+            
             // update last logged at in the database
             fetch('http://localhost:5555/user', {
                 method: 'PATCH',
@@ -33,6 +40,19 @@ const Login = () => {
             console.log(error);
             toast('User or password did not matched. Please check carefully')
 
+        })
+    }
+
+    // logged in by google
+    const handleGoogleLogin = () => {
+        loginByGoogle()
+        .then(result => {
+            toast('Logged in by google successfully')
+            console.log(result.user);
+        })
+        .catch(error => {
+            toast('Sorry! Unsuccessful logged in')
+            console.log(error);
         })
     }
     return (
@@ -60,6 +80,23 @@ const Login = () => {
                             <button className="btn btn-accent">Login</button>
                         </div>
                     </form>
+                    <div className="text-center space-y-8 my-10">
+                        <p>Or Continue With</p>
+                        <div className="space-x-10">
+                            <button 
+                            onClick={handleGoogleLogin}
+                            className="btn btn-warning">
+                                <FaGoogle />
+                                Google
+                            </button>
+                            <button 
+                            
+                            className="btn btn-error">
+                                <FaGithub />
+                                Github
+                            </button>
+                        </div>
+                    </div>
                     <div className="text-center pb-10">
                         <p className="text-2xl">Do not have an account? Please <Link to='/register' className="text-purple-500">Register</Link></p>
                     </div>
