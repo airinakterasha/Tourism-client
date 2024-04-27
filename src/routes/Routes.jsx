@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import AllTouristSpot from "../pages/AllTouristSpot";
 import AddTouristsSpot from "../pages/AddTouristsSpot";
 import MyList from "../pages/MyList";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
         {
             path: "/my-list",
             element: <MyList></MyList>,
+        },
+        {
+          path: "/register",
+          element: <Register></Register>,
+        },
+        {
+          path: "/login",
+          element: <Login></Login>,
         },
       ],
     },
