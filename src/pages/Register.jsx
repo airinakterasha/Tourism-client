@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { AuthContext } from "../providers/AuthProvider"
+import { Link } from "react-router-dom"
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2'
 
@@ -96,6 +97,10 @@ const Register = () => {
                             <button className="btn btn-accent">Register</button>
                         </div>
                     </form>
+
+                    <div className="text-center pb-10">
+                        <p className="text-2xl">Already have an account? Please <Link to='/login' className="text-purple-500">Login</Link></p>
+                    </div>
                 </div>
             </div>
         </>
