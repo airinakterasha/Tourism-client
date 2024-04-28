@@ -1,9 +1,47 @@
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom"
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyList = () => {
   const userTouristLoader = useLoaderData();
   console.log(userTouristLoader);
+  const [userTourist, setUserTourist] = useState(userTouristLoader);
+
+
+  const handledelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          
+          //console.log('delete confirm');
+          fetch(`http://localhost:5555/tourist-spot/${_id}`, {
+            method: 'DELETE'
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if(data.deletedCount > 0){
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your coffee has been deleted.",
+                    icon: "success"
+                });
+                const remaining = userTourist.filter(cof => cof._id !== _id)
+                setUserTourist(remaining);
+            }
+          })
+        }
+      });
+  }
   
   return (
     <>
@@ -29,7 +67,7 @@ const MyList = () => {
               </thead>
               <tbody>
                 {
-                  userTouristLoader.map(userSpot => <tr key={userSpot._id} className="hover capitalize">
+                  userTourist.map(userSpot => <tr key={userSpot._id} className="hover capitalize">
                     
                     <td>{userSpot.tourists_spot_name}</td>
                     <td>{userSpot.country_name}</td>
@@ -40,7 +78,7 @@ const MyList = () => {
                         <button className="btn btn-accent">Update</button>
                       </Link>
                       
-                      <button className="btn btn-neutral">Delete</button>
+                      <button onClick={() => {handledelete(userSpot._id)}} className="btn btn-neutral">Delete</button>
                     </td>
                   </tr>)
                 }
