@@ -6,7 +6,7 @@ const AddTouristsSpot = () => {
     e.preventDefault();
     const form = e.target;
 
-    const photo = form.photo.value;
+    const image = form.image.value;
     const tourists_spot_name = form.tourists_spot_name.value;
     const country_name = form.country_name.value;
     const location = form.location.value;
@@ -19,8 +19,8 @@ const AddTouristsSpot = () => {
     const email = form.email.value;
 
 
-    console.log(photo, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear, user_name, email);
-    const addTouristSpot = {photo, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear, user_name, email}
+    console.log(image, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear, user_name, email);
+    const addTouristSpot = {image, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear, user_name, email}
 
     // send data to the server
     fetch('http://localhost:5555/tourist-spot', {
@@ -61,7 +61,7 @@ const AddTouristsSpot = () => {
                                 <label className="label">
                                     <span className="label-text">Image Url</span>
                                 </label>
-                                <input type="text" name="photo" placeholder="Image Url" className="input input-bordered"/>
+                                <input type="text" name="image" placeholder="Image Url" className="input input-bordered"/>
                             </div>
                         </div>
                         <div className="flex justify-around gap-5">
