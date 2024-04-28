@@ -2,6 +2,10 @@ import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import { AuthContext } from "../providers/AuthProvider"
 
+// react tooltip
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
 
@@ -25,7 +29,7 @@ const Header = () => {
     </>
   return (
     <>
-        <div className="">
+        <div className="py-5">
             {/* navbar start */}
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
@@ -47,9 +51,16 @@ const Header = () => {
                 <div className="navbar-end space-x-5">
                     {
                         user ? <>
-                            <span>{user.email}</span>
-                            <span>{user.displayName}</span>
-                            {/* <img src={user.photoURL} alt="" /> */}
+                            <div className="">
+                                <a className="my-anchor-element">
+                                    <div className="p-2">
+                                        <img className="rounded-full w-12 h-12" src={user.photoURL} alt="" />
+                                    </div>
+                                </a>
+                                <Tooltip anchorSelect=".my-anchor-element" place="top">
+                                    <span>{user.displayName}</span>
+                                </Tooltip>
+                            </div>
                             <a onClick={handleLogOut} className="btn btn-sm">Sign Out</a>
                         </>
                         :
