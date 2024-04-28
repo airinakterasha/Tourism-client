@@ -29,7 +29,7 @@ const Header = () => {
     </>
   return (
     <>
-        <div className="py-5">
+        <div className="p-5">
             {/* navbar start */}
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
@@ -57,8 +57,8 @@ const Header = () => {
                                         <img className="rounded-full w-12 h-12" src={user.photoURL} alt="" />
                                     </div>
                                 </a>
-                                <Tooltip anchorSelect=".my-anchor-element" place="top">
-                                    <span>{user.displayName}</span>
+                                <Tooltip anchorSelect=".my-anchor-element" place="bottom">
+                                    {user.displayName}
                                 </Tooltip>
                             </div>
                             <a onClick={handleLogOut} className="btn btn-sm">Sign Out</a>

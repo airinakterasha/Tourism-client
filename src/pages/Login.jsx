@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
-    const { signIn, loginByGoogle } = useContext(AuthContext);
+    const { signIn, loginByGoogle, loginByGithub } = useContext(AuthContext);
 
 
     const handleLogin = (e) => {
@@ -55,6 +55,20 @@ const Login = () => {
             console.log(error);
         })
     }
+
+    const handleGithubLogin = () => {
+        loginByGithub()
+        .then(result => {
+            toast('Logged in by github successfully')
+            console.log(result.user);
+
+        })
+        .catch(error => {
+            toast('Sorry! Unsuccessful logged in by github')
+            console.log(error);
+        })
+    }
+
     return (
         <>
             <div className="bg-[#F4F5F8] md:w-3/4 lg:w-1/2 mx-auto my-20">
@@ -90,7 +104,7 @@ const Login = () => {
                                 Google
                             </button>
                             <button 
-                            
+                            onClick={handleGithubLogin}
                             className="btn btn-error">
                                 <FaGithub />
                                 Github

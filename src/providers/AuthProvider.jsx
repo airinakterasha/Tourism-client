@@ -5,6 +5,7 @@ import { useState } from "react";
 
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 
 export const AuthContext = createContext(null);
@@ -29,6 +30,11 @@ const AuthProvider = ({children}) => {
     const loginByGoogle = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
+    }
+
+    const loginByGithub = () => {
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider);
     }
 
     const updateUserProfile = (name, photo) => {
@@ -62,6 +68,7 @@ const AuthProvider = ({children}) => {
         createUser,
         signIn,
         loginByGoogle,
+        loginByGithub,
         updateUserProfile,
         logOut
     }
