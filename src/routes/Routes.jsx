@@ -3,6 +3,7 @@ import Main from "../layout/Main";
 import Home from "../pages/Home";
 import AllTouristSpot from "../pages/AllTouristSpot";
 import AddTouristsSpot from "../pages/AddTouristsSpot";
+import SingleTouristsSpot from "../pages/SingleTouristsSpot";
 import MyList from "../pages/MyList";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
             path: "/all-tourist-spot",
             element: <AllTouristSpot></AllTouristSpot>,
             loader: () => fetch('http://localhost:5555/tourist-spot')
+        },
+        {
+          path: "/all-tourist-spot/:id",
+          element: <SingleTouristsSpot></SingleTouristsSpot>,
+          loader: ({params}) => fetch(`http://localhost:5555/tourist-spot/${params.id}`)
         },
         {
             path: "/add-tourist-spot",

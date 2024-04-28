@@ -49,9 +49,9 @@ const AddTouristsSpot = () => {
 
   return (
     <>
-      <div className="">
+      <div className="py-10">
           <div className="bg-[#F4F5F8] md:w-3/4 lg:w-1/2 mx-auto">
-                <div className="text-center pt-20">
+                <div className="text-center pt-10">
                     <h2 className="text-4xl bg-accent p-10">Add Tourists Spot</h2>
                 </div>
                 <div className="">
