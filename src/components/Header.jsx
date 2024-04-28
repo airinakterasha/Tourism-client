@@ -48,6 +48,8 @@ const Header = () => {
                     {
                         user ? <>
                             <span>{user.email}</span>
+                            <span>{user.displayName}</span>
+                            {/* <img src={user.photoURL} alt="" /> */}
                             <a onClick={handleLogOut} className="btn btn-sm">Sign Out</a>
                         </>
                         :

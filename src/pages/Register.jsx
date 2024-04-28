@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -36,26 +36,33 @@ const Register = () => {
             // user create to database
             const createAt = result.user?.metadata?.creationTime;
             const user = {name, email, photo, createAt}
+            updateUserProfile(name, photo)
+            .then(()=>{
+                fetch('http://localhost:5555/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.insertedId){
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'You have been created your account',
+                            icon: 'success',
+                            confirmButtonText: 'Cool'
+                        })
+                    }
+                })
+            })
+            .catch(()=>{
+                console.log('not working')
+            })
 
-            fetch('http://localhost:5555/user', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.insertedId){
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'You have been created your account',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    })
-                }
-            })
+            
         })
         .catch(error => {
             console.log(error)
