@@ -4,7 +4,8 @@ import { useLoaderData } from "react-router-dom"
 const SingleTouristsSpot = () => {
     const loadTouristSpot = useLoaderData();
     console.log(loadTouristSpot);
-    const {image, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear, user_name, email} = loadTouristSpot;
+    const {_id, image, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear, user_name, email} = loadTouristSpot;
+    console.log('Id will not show on details page but we neeed this for capture tourist spot', _id);
     return (
         <>
             <div className="h-screen">
@@ -37,6 +38,7 @@ const SingleTouristsSpot = () => {
  
                         <p><span className="font-bold">Author Name: </span> {user_name}</p>
                         <p><span className="font-bold">Author Email: </span>{email}</p>
+                        
                     </div>
                 </div>
                 <div className="p-5">
