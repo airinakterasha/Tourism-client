@@ -32,8 +32,8 @@ const Home = () => {
       </section>
       {/* Slider section end */}
       {/* Tourists Spots */}
-      <section className='py-20 px-10'>
-        <div className="text-center text-3xl">
+      <section className='py-10 px-10'>
+        <div className="text-center text-3xl py-10">
           <h2 className="font-bold mb-10">Tourist Spot</h2>
         </div>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -53,7 +53,7 @@ const Home = () => {
       </section>
       {/* Booking section end */}
       {/* Country section start */}
-      <section className='py-20'>
+      <section className=''>
         <div className="text-center text-3xl py-10">
           <h2 className="font-bold">Country Section</h2>
         </div>

@@ -84,7 +84,7 @@ const MyList = () => {
                     <td>{userSpot.location}</td>
                     <td>{userSpot.seasonality}</td>
                     <td>
-                      <Link to='/update-tourist-spot'>
+                      <Link to={`/update-tourist-spot/${userSpot._id}`}>
                         <button className="btn btn-accent">Update</button>
                       </Link>
                     </td>
