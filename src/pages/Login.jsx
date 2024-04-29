@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from 'react-toastify';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
     const { signIn, loginByGoogle, loginByGithub } = useContext(AuthContext);
-
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -19,14 +19,11 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             console.log(result.user);
-            
             const user = {
                 email,
                 lastLoggedAt: result.user?.metadata?.lastSignInTime
                 
             }
-            
-            
             // update last logged at in the database
             fetch('http://localhost:5555/user', {
                 method: 'PATCH',
@@ -35,6 +32,8 @@ const Login = () => {
                 },
                 body: JSON.stringify(user)
             })
+            toast('Logged in successfully.')
+            navigate('/')
         })
         .catch(error => {
             console.log(error);

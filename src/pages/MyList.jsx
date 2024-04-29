@@ -1,12 +1,21 @@
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom"
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const MyList = () => {
-  const userTouristLoader = useLoaderData();
-  console.log(userTouristLoader);
-  const [userTourist, setUserTourist] = useState(userTouristLoader);
+  const {user} = useContext(AuthContext);
+  const [userTourist, setUserTourist] = useState([]);
+
+  useEffect(() => {
+  
+      // Fetch tourist spots for the logged-in user
+      fetch(`http://localhost:5555/user/tourist-spots/${user?.email}`)
+        .then((res) => res.json())
+        .then((data) => setUserTourist(data))
+        .catch((error) => console.error("Error fetching tourist spots:", error));
+
+  }, [user]);
 
 
   const handledelete = (_id) => {
@@ -32,7 +41,7 @@ const MyList = () => {
             if(data.deletedCount > 0){
                 Swal.fire({
                     title: "Deleted!",
-                    text: "Your coffee has been deleted.",
+                    text: "Your tourist spot has been deleted.",
                     icon: "success"
                 });
                 const remaining = userTourist.filter(cof => cof._id !== _id)
@@ -45,7 +54,7 @@ const MyList = () => {
   
   return (
     <>
-      <div className="h-screen">
+      <div className="">
         <div className="md:w-3/4 lg:w-1/2 mx-auto">
             <div className="text-center">
                 <h2 className="text-4xl bg-accent p-10 capitalize">My all tourist spots</h2>

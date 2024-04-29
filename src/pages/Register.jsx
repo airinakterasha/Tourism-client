@@ -1,12 +1,13 @@
 import { useContext } from "react"
 import { AuthContext } from "../providers/AuthProvider"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2'
 
 
 const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -53,8 +54,8 @@ const Register = () => {
                             title: 'Success!',
                             text: 'You have been created your account',
                             icon: 'success',
-                            confirmButtonText: 'Cool'
-                        })
+                            confirmButtonText: 'Cool',
+                        }, navigate('/'))
                     }
                 })
             })

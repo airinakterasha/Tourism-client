@@ -2,6 +2,7 @@ import Swal from 'sweetalert2'
 
 const AddTouristsSpot = () => {
 
+
   const handleAddTouristSpot = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -36,9 +37,9 @@ const AddTouristsSpot = () => {
       if(data.insertedId){
         Swal.fire({
           title: 'Success!',
-          text: 'User Added Successfully',
+          text: 'You added your tourist spot Successfully',
           icon: 'success',
-          confirmButtonText: 'Cool'
+          confirmButtonText: 'Awesome'
         })
       }
     })

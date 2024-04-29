@@ -10,6 +10,10 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import UpdateProfile from "../pages/UpdateProfile";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
+
+import CountryName from "../countryComponents/CountryName";
+import CountryTourist from "../countryComponents/CountryTourist";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +24,7 @@ const router = createBrowserRouter([
         {
           path: "/",
           element: <Home></Home>,
+          loader: () => fetch('http://localhost:5555/countryname')
         },
         {
             path: "/all-tourist-spot",
@@ -28,21 +33,21 @@ const router = createBrowserRouter([
         },
         {
           path: "/all-tourist-spot/:id",
-          element: <SingleTouristsSpot></SingleTouristsSpot>,
+          element: <PrivateRoute><SingleTouristsSpot></SingleTouristsSpot></PrivateRoute> ,
           loader: ({params}) => fetch(`http://localhost:5555/tourist-spot/${params.id}`)
         },
         {
             path: "/add-tourist-spot",
-            element: <AddTouristsSpot></AddTouristsSpot>,
+            element: <PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute> ,
         },
         {
           path: "/update-tourist-spot",
-          element: <MyListUpdate></MyListUpdate>,
+          element: <PrivateRoute><MyListUpdate></MyListUpdate></PrivateRoute> ,
         },
         {
             path: "/my-list",
-            element: <MyList></MyList>,
-            loader: ({params}) => fetch(`http://localhost:5555/user/${params.id}/tourist-spot`)
+            element: <PrivateRoute><MyList></MyList></PrivateRoute>,
+            // loader: ({params}) => fetch(`http://localhost:5555/user/${params.id}/tourist-spot`)
         },
         
         {
@@ -55,8 +60,19 @@ const router = createBrowserRouter([
         },
         {
           path: "/update-profile",
-          element: <UpdateProfile></UpdateProfile>,
+          element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>,
         },
+        {
+          path: "/country-name",
+          element: <CountryName></CountryName>,
+        },
+        {
+          path: "/country-tourist-name/:name",
+          element: <CountryTourist></CountryTourist>,
+          loader: ({params})=> fetch(`http://localhost:5555/tourist-spot/country/${params.name}`)
+          
+        },
+        //loader: ({params}) => fetch(`http://localhost:5555/user/${params.id}/tourist-spot`)
       ],
     },
   ]);
