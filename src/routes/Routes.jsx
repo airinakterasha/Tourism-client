@@ -72,7 +72,6 @@ const router = createBrowserRouter([
           loader: ({params})=> fetch(`http://localhost:5555/tourist-spot/country/${params.name}`)
           
         },
-        //loader: ({params}) => fetch(`http://localhost:5555/user/${params.id}/tourist-spot`)
       ],
     },
   ]);

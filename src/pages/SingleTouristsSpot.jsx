@@ -8,42 +8,46 @@ const SingleTouristsSpot = () => {
     console.log('Id will not show on details page but we neeed this for capture tourist spot', _id);
     return (
         <>
-            <div className="h-screen">
-                <div className="md:w-3/4 lg:w-1/2 mx-auto">
+
+            {/* start */}
+          
+            {/* end */}
+            <div className="">
+                <div className="lg:w-1/2 mx-auto">
                     <div className="text-center">
                         <h2 className="text-4xl bg-accent p-10">{tourists_spot_name}</h2>
                     </div>
                 </div>
-                <div className="flex">
-                    <div className="w-1/2 p-10">
-                        <img src={image} alt="" />
+                <div className="flex flex-col md:flex-row">
+                    <div className="p-10">
+                        <img src={image} alt="" className="md:w-[500px] lg:w-full"/>
                     </div>
-                    <div className="p-20 space-y-5">
-                        <div className="space-y-5">
+                    <div className="px-10  md:px-2 md:py-10 lg:p-20 lg:space-y-5 lg:me-36">
+                        <div className="lg:space-y-5 ">
+                            <p><span className="font-bold">Tourist Spot Name: </span>{tourists_spot_name}</p>
                             <p><span className="font-bold">Country Name: </span>{country_name}</p>
                             <p><span className="font-bold">Location: </span>{location}</p>
                         </div>
                         
-                        <div className="flex justify-between gap-10">
-                            <div className="space-y-5">
+                        <div className="flex md:flex-col lg:flex-row justify-between gap-10 md:gap-0 lg:gap-10">
+                            <div className="lg:space-y-5">
                                 <p><span className="font-bold">Average Cost: </span>{average_cost} TK.</p>
                                 <p><span className="font-bold">Total Visitor: </span>{totaVisitorsPerYear} per year</p>
                             </div>
-                            <div className="space-y-5">
+                            <div className="lg:space-y-5">
                                 <p><span className="font-bold">Travel Time: </span>{travel_time} days</p>
                                 <p className="capitalize"><span className="font-bold">Season: </span>{seasonality}</p>
                             </div>
                         </div>
-                        
- 
                         <p><span className="font-bold">Author Name: </span> {user_name}</p>
                         <p><span className="font-bold">Author Email: </span>{email}</p>
-                        
+                        <div className="mb-10">
+                            <h3 className="lg:text-2xl"><span className="font-bold">Description: </span>{short_description}</h3>
+                        </div>
                     </div>
+                    
                 </div>
-                <div className="p-5">
-                    <h3 className="text-2xl">{short_description}</h3>
-                </div>
+                
             </div>
         </>
     )

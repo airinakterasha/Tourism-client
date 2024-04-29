@@ -61,7 +61,7 @@ const MyList = () => {
             </div>
         </div>
 
-        <div className="p-20">
+        <div className="py-20">
           <div className="overflow-x-auto w-3/4 mx-auto">
             <table className="table">
               {/* head */}
@@ -71,7 +71,8 @@ const MyList = () => {
                   <th>Country Name</th>
                   <th>Location</th>
                   <th>Seasonality</th>
-                  <th>Action</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -82,11 +83,12 @@ const MyList = () => {
                     <td>{userSpot.country_name}</td>
                     <td>{userSpot.location}</td>
                     <td>{userSpot.seasonality}</td>
-                    <td className="space-x-3">
+                    <td>
                       <Link to='/update-tourist-spot'>
                         <button className="btn btn-accent">Update</button>
                       </Link>
-                      
+                    </td>
+                    <td>
                       <button onClick={() => {handledelete(userSpot._id)}} className="btn btn-neutral">Delete</button>
                     </td>
                   </tr>)

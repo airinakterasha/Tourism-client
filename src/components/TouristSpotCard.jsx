@@ -4,9 +4,9 @@ const TouristSpotCard = ({touristSpot}) => {
     const {_id, tourists_spot_name, image, average_cost, totaVisitorsPerYear, travel_time, seasonality } = touristSpot
     return (
         <>
-            <div className="py-20">
+            <div className="lg:py-20">
             {/* card start */}
-            <div className="cardbg-base-100 shadow-xl image-full h-[500px]">
+            <div className="cardbg-base-100 shadow-xl image-full lg:h-[500px]">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title capitalize">{tourists_spot_name}</h2>

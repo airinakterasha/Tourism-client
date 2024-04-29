@@ -10,7 +10,7 @@ const CountryView = ({countryname, slider}) => {
                 <div className="card bg-base-100 shadow-xl image-full">
                     <figure><img src={image} alt="Shoes" /></figure>
                     <div className="card-body justify-center content-center">
-                        <div className="text-center lg:ps-48">
+                        <div className="text-center lg:ps-56">
                             <div className="mb-10">
                                 <img src={flag} className="w-20 h-20" alt="" />
                             </div>

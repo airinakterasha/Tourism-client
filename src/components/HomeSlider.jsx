@@ -19,7 +19,7 @@ const HomeSlider = ({slider}) => {
                     <div className="">
                         <img src={banner.image} alt="" />
                     </div>
-                    <div className="py-20 lg:p-40 space-y-10 text-black">
+                    <div className="py-20 lg:p-40 md:space-y-10 text-black">
                         <h1>{banner.tourists_spot_name}</h1>
                         <h1 className="mb-5 text-2xl md:text-5xl font-bold">{banner.country_name}</h1>
                         <p className="mb-5 lg:text-2xl md:px-14">{banner.location}</p>

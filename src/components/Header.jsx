@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { AuthContext } from "../providers/AuthProvider"
 
 // react tooltip
@@ -39,7 +39,7 @@ const Header = () => {
                             {navlink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl"><p>Dream<span className="text-accent">Tour</span></p></a>
+                    <Link className="btn btn-ghost text-xl"><p>Dream<span className="text-accent">Tour</span></p></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
