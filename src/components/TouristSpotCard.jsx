@@ -6,7 +6,7 @@ const TouristSpotCard = ({touristSpot}) => {
         <>
             <div className="lg:py-20">
             {/* card start */}
-            <div className="cardbg-base-100 shadow-xl image-full lg:h-[500px]">
+            <div className="cardbg-base-100 shadow-xl image-full lg:h-[550px]">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title capitalize">{tourists_spot_name}</h2>

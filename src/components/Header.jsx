@@ -89,7 +89,7 @@ const Header = () => {
                                     {user.displayName}
                                 </Tooltip>
                             </div>
-                            <a onClick={handleLogOut} className="btn btn-sm btn-accent">Sign Out</a>
+                            <a onClick={handleLogOut} className="btn btn-sm btn-accent">Logout</a>
                         </>
                         :
                         <>

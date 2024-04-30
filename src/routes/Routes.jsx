@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/country-name",
-          element: <CountryName></CountryName>,
+          element: <PrivateRoute><CountryName></CountryName></PrivateRoute> ,
         },
         {
           path: "/country-tourist-name/:name",
