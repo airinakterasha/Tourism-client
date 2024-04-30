@@ -10,10 +10,10 @@ const CountryTourist = () => {
             <div className="">
                 <div className="md:w-3/4 lg:w-1/2 mx-auto mb-10">
                     <div className="text-center pt-20">
-                        <h2 className="text-4xl bg-accent p-10 font-bold uppercase">{name}</h2>
+                        <h2 className="text-4xl text-black font-bold bg-accent p-10 uppercase">{name}</h2>
                     </div>
                 </div>
-                <div className="md:p-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="pb-14 md:p-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
                     
                     {
                         tourist.map(countryTourist => <CountryTouristItem key={countryTourist._id} countryTourist={countryTourist}></CountryTouristItem>)

@@ -30,8 +30,8 @@ const AllTouristSpot = () => {
               <div className="">
                 {/* Dropdown for sorting */}
                 <select onChange={(e) => {setSortOrder(e.target.value); handleSort();}}>
-                  <option value="asc">Ascending</option>
-                  <option value="desc">Descending</option>
+                  <option value="asc">Ascending Average Cost</option>
+                  <option value="desc">Descending Average Cost</option>
                 </select>
               </div>
           </div>

@@ -5,11 +5,12 @@ const CountryName = () => {
     e.preventDefault();
     const form = e.target;
 
-    const countryName = form.countryName.value;
+    const countryName = form.countryName.value.toLowerCase();
     const image = form.image.value;
     const flag = form.flag.value;
-    console.log(countryName, image, flag);
-    const country = {countryName, image, flag}
+    const short_description = form.short_description.value;
+    console.log(countryName, image, flag, short_description);
+    const country = {countryName, image, flag, short_description}
 
     fetch('https://tourism-server-site-blond.vercel.app/countryname', {
       method: 'POST',
@@ -49,6 +50,12 @@ const CountryName = () => {
               <span className="label-text">Country Flag Url</span>
             </label>
             <input type="text" name="flag" placeholder="Add Country Flag url" className="input input-bordered" required />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Add Description</span>
+            </label>
+            <input type="text" name="short_description" placeholder="Add a short description" className="input input-bordered" required />
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Add Country</button>

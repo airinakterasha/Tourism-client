@@ -25,7 +25,7 @@ const SingleTouristsSpot = () => {
                     <div className="px-10  md:px-2 md:py-10 lg:p-20 lg:space-y-5 lg:me-36">
                         <div className="lg:space-y-5 ">
                             <p><span className="font-bold">Tourist Spot Name: </span>{tourists_spot_name}</p>
-                            <p><span className="font-bold capitalize">Country Name: </span>{country_name}</p>
+                            <p className="capitalize"><span className="font-bold">Country Name: </span>{country_name}</p>
                             <p><span className="font-bold">Location: </span>{location}</p>
                         </div>
                         
