@@ -18,10 +18,10 @@ const HomeSlider = ({slider}) => {
                   <div className="hero-content text-center text-neutral-content">
                     <div className="">
                         <Slide direction={'up'} delay={300}>
-                        <img src={banner.image} alt="" />
+                        <img src={banner.image} alt="" className="pt-5" />
                         </Slide>
                     </div>
-                    <div className="py-20 lg:p-40 md:space-y-10 text-black">
+                    <div className="md:py-20 lg:p-40 md:space-y-10 text-black">
                         <Slide direction={'down'} delay={1000}>
                           <h1 className="md:text-2xl font-bold capitalize">{banner.tourists_spot_name}</h1>
                           <h1 className="mb-5 text-2xl md:text-5xl font-bold capitalize">{banner.country_name}</h1>

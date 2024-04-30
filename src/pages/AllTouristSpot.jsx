@@ -27,7 +27,7 @@ const AllTouristSpot = () => {
         <div className="md:w-3/4 lg:w-1/2 mx-auto">
           <div className="text-center">
               <h2 className="text-4xl text-black font-bold bg-accent p-10 mb-10">All Tourists Spot</h2>
-              <div className="">
+              <div className="mb-7">
                 {/* Dropdown for sorting */}
                 <select onChange={(e) => {setSortOrder(e.target.value); handleSort();}}>
                   <option value="asc">Ascending Average Cost</option>
