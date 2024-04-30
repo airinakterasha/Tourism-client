@@ -18,7 +18,7 @@ website type - B9 A10 Type-01 Requirements
 ## Technologies Used
 In building Dreamtour, we utilized various packages to enhance our development process. These include:
 
-- **Frontend:** React.js, React Router, React Icons, React-Tooltip Tailwind CSS
+- **Frontend:** React.js, React Router, React Icons, React-Tooltip, Tailwind CSS
 - **State Management:** React Context API
 - **Authentication:** Firebase Authentication
 - **Database:** Firebase Firestore
@@ -28,7 +28,7 @@ In building Dreamtour, we utilized various packages to enhance our development p
 - **Toast Notifications:** React Toastify, Sweetalert2
 - **Helmet:** React Helmet Async
 - **Slider:** Swiper
-- **Animation:** Lottie React, React Awesome reveal
+- **Animation:** React Awesome reveal, React-Tooltip
 
 
 ## Installation
