@@ -12,8 +12,8 @@ const TouristSpotHomePage = ({tourSpot}) => {
                     <figure><Slide direction={'left'} delay={2000}><img src={image} alt={tourists_spot_name} /></Slide></figure>
                     <div className="card-body">
                         <Slide direction={'right'} delay={2000}>
-                        <h2 className="card-title">{tourists_spot_name}</h2>
-                        <p>{short_description}</p>
+                        <h2 className="card-title capitalize">{tourists_spot_name}</h2>
+                        <p className="m-1">{short_description}</p>
                         <div className="card-actions justify-end">
                             <Link to={`/all-tourist-spot/${_id}`}>
                                 <button className="btn btn-accent">View Details</button>

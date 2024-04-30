@@ -54,7 +54,7 @@ const Register = () => {
                             title: 'Success!',
                             text: 'You have been created your account',
                             icon: 'success',
-                            confirmButtonText: 'Cool',
+                            confirmButtonText: 'Great',
                         }, navigate('/'))
                     }
                 })
@@ -73,7 +73,7 @@ const Register = () => {
         <>
             <div className="bg-[#F4F5F8] md:w-3/4 lg:w-1/2 mx-auto md:mb-10">
                 <div className="text-center pt-20">
-                    <h2 className="text-4xl bg-accent p-10">Please Register</h2>
+                    <h2 className="text-4xl text-black font-bold bg-accent p-10">Please Register</h2>
                 </div>
                 <div className="">
                     <form onSubmit={handleRegister} className="card-body ">

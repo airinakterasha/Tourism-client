@@ -1,11 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const MyListUpdate = () => {
     const touristSpot = useLoaderData();
     console.log(touristSpot);
-    const {_id, image, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear} = touristSpot
+    const {_id, image, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear} = touristSpot;
+
+    const navigate = useNavigate();
     
     const handleUpdateTourist = (e) => {
         e.preventDefault();
@@ -13,7 +15,7 @@ const MyListUpdate = () => {
         const form = e.target;
         const image = form.image.value;
         const tourists_spot_name = form.tourists_spot_name.value;
-        const country_name = form.country_name.value;
+        const country_name = form.country_name.value.toLowerCase();
         const location = form.location.value;
         const average_cost = form.average_cost.value;
         const short_description = form.short_description.value;
@@ -41,7 +43,7 @@ const MyListUpdate = () => {
                 text: 'Your Tourist Spot Updated Successfully',
                 icon: 'success',
                 confirmButtonText: 'Excellent'
-            })
+            }, navigate('/all-tourist-spot'))
             }
         })
     }
@@ -52,7 +54,7 @@ const MyListUpdate = () => {
             <div className="py-10">
             <div className="bg-[#F4F5F8] md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="text-center pt-10">
-                        <h2 className="text-4xl bg-accent p-10">Update Tourists Spot</h2>
+                        <h2 className="text-4xl text-black font-bold bg-accent p-10">Update Tourists Spot</h2>
                     </div>
                     <div className="">
                         <form onSubmit={handleUpdateTourist} className="card-body ">

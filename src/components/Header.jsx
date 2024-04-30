@@ -13,7 +13,6 @@ const Header = () => {
      // update state on toggle
     const handleToggle = e => {
         if (e.target.checked) {
-            //setTheme('synthwave')
             setTheme('dark')
         } else {
             setTheme('light')
@@ -66,7 +65,7 @@ const Header = () => {
                         {navlink}
                     </ul>
                 </div>
-                <div className="navbar-end space-x-5">
+                <div className="navbar-end lg:space-x-5">
                     <div className="">
                         <label className="swap swap-rotate">
                             {/* this hidden checkbox controls the state */}
