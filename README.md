@@ -62,11 +62,11 @@ REACT_APP_FIREBASE_APP_ID=your-app-id
 ### Categories
 
 Southeast Asia:
-Bangladesh - Sundarban
-Thailand - Bangkok
-Indonesia - Bali
-Malaysia - Kuala Lumpur
-Vietnam - Ha Long Bay
+Bangladesh - Sundarban,
+Thailand - Bangkok,
+Indonesia - Bali,
+Malaysia - Kuala Lumpur,
+Vietnam - Ha Long Bay,
 Cambodia - Angkor Wat
 
 
