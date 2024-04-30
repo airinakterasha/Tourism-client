@@ -39,7 +39,7 @@ const Register = () => {
             const user = {name, email, photo, createAt}
             updateUserProfile(name, photo)
             .then(()=>{
-                fetch('http://localhost:5555/user', {
+                fetch('https://tourism-server-site-blond.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

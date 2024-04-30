@@ -11,7 +11,7 @@ const CountryName = () => {
     console.log(countryName, image, flag);
     const country = {countryName, image, flag}
 
-    fetch('http://localhost:5555/countryname', {
+    fetch('https://tourism-server-site-blond.vercel.app/countryname', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

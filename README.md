@@ -1,9 +1,9 @@
 # DreamTour
 RealHome is a web application for Tourism Management management, providing features for users to browse properties, register, login, and update their profiles. Also user can add, edit, remove their tour spots.
-Live website link - 
+Live website link - https://tourism-client-site.web.app/
 And,
-github client repository link - 
-github server repository link - 
+github client repository link - https://github.com/programming-hero-web-course-4/B9A10-client-side-airinakterasha
+github server repository link - https://github.com/programming-hero-web-course-4/b9a10-server-side-airinakterasha
 website type - B9 A10 Type-01 Requirements
 
 
@@ -37,9 +37,9 @@ In building Dreamtour, we utilized various packages to enhance our development p
 
 ```bash
 
-git clone https://github.com/your-username/RealHome.git
+git clone https://github.com/programming-hero-web-course-4/B9A10-client-side-airinakterasha
 2. Navigate to the project directory:
-cd RealHome
+cd tourism-client-site
 
 3. Install dependencies:
 npm install

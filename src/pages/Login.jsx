@@ -25,7 +25,7 @@ const Login = () => {
                 
             }
             // update last logged at in the database
-            fetch('http://localhost:5555/user', {
+            fetch('https://tourism-server-site-blond.vercel.app/user', {
                 method: 'PATCH',
                 headers: {
                 'content-type': 'application/json'

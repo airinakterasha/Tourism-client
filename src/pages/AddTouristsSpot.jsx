@@ -24,7 +24,7 @@ const AddTouristsSpot = () => {
     const addTouristSpot = {image, tourists_spot_name, country_name, location, average_cost, short_description, seasonality, travel_time, totaVisitorsPerYear, user_name, email}
 
     // send data to the server
-    fetch('http://localhost:5555/tourist-spot', {
+    fetch('https://tourism-server-site-blond.vercel.app/tourist-spot', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

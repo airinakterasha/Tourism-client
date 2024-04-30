@@ -24,17 +24,17 @@ const router = createBrowserRouter([
         {
           path: "/",
           element: <Home></Home>,
-          loader: () => fetch('http://localhost:5555/countryname')
+          loader: () => fetch('https://tourism-server-site-blond.vercel.app/countryname')
         },
         {
             path: "/all-tourist-spot",
             element: <AllTouristSpot></AllTouristSpot>,
-            loader: () => fetch('http://localhost:5555/tourist-spot')
+            loader: () => fetch('https://tourism-server-site-blond.vercel.app/tourist-spot')
         },
         {
           path: "/all-tourist-spot/:id",
           element: <PrivateRoute><SingleTouristsSpot></SingleTouristsSpot></PrivateRoute> ,
-          loader: ({params}) => fetch(`http://localhost:5555/tourist-spot/${params.id}`)
+          loader: ({params}) => fetch(`https://tourism-server-site-blond.vercel.app/tourist-spot/${params.id}`)
         },
         {
             path: "/add-tourist-spot",
@@ -43,12 +43,12 @@ const router = createBrowserRouter([
         {
           path: "/update-tourist-spot/:id",
           element: <PrivateRoute><MyListUpdate></MyListUpdate></PrivateRoute> ,
-          loader: ({params}) => fetch(`http://localhost:5555/tourist-spot/${params.id}`)
+          loader: ({params}) => fetch(`https://tourism-server-site-blond.vercel.app/tourist-spot/${params.id}`)
         },
         {
             path: "/my-list",
             element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-            // loader: ({params}) => fetch(`http://localhost:5555/user/${params.id}/tourist-spot`)
+            // loader: ({params}) => fetch(`https://tourism-server-site-blond.vercel.app/user/${params.id}/tourist-spot`)
         },
         
         {
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
         {
           path: "/country-tourist-name/:name",
           element: <CountryTourist></CountryTourist>,
-          loader: ({params})=> fetch(`http://localhost:5555/tourist-spot/country/${params.name}`)
+          loader: ({params})=> fetch(`https://tourism-server-site-blond.vercel.app/tourist-spot/country/${params.name}`)
           
         },
       ],

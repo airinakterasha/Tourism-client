@@ -25,7 +25,7 @@ const MyListUpdate = () => {
         console.log(newTouristSpot);
 
         // send data to the server
-        fetch(`http://localhost:5555/tourist-spot/${_id}`, {
+        fetch(`https://tourism-server-site-blond.vercel.app/tourist-spot/${_id}`, {
             method: 'PUT',
             headers: {
             'content-type': 'application/json'

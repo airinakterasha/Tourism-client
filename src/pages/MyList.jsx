@@ -10,7 +10,7 @@ const MyList = () => {
   useEffect(() => {
   
       // Fetch tourist spots for the logged-in user
-      fetch(`http://localhost:5555/user/tourist-spots/${user?.email}`)
+      fetch(`https://tourism-server-site-blond.vercel.app/user/tourist-spots/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setUserTourist(data))
         .catch((error) => console.error("Error fetching tourist spots:", error));
@@ -32,7 +32,7 @@ const MyList = () => {
         if (result.isConfirmed) {
           
           //console.log('delete confirm');
-          fetch(`http://localhost:5555/tourist-spot/${_id}`, {
+          fetch(`https://tourism-server-site-blond.vercel.app/tourist-spot/${_id}`, {
             method: 'DELETE'
           })
           .then(res => res.json())

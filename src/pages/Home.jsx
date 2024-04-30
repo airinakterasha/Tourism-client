@@ -14,7 +14,7 @@ const Home = () => {
   const [slider, setSlider] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5555/tourist-spot')
+    fetch('https://tourism-server-site-blond.vercel.app/tourist-spot')
     .then(res=> res.json())
     .then(data =>{
       console.log(data);
