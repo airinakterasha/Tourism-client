@@ -1,4 +1,4 @@
-# RealHome
+# DreamTour
 RealHome is a web application for Tourism Management management, providing features for users to browse properties, register, login, and update their profiles. Also user can add, edit, remove their tour spots.
 Live website link - https://tourism-client-site.web.app/
 And,
